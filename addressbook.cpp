@@ -3,13 +3,13 @@
 addressbook::addressbook()
 {
     for(int i = 0; i < 10; i++){
-        contact *tempContact = new contact("person" + QString::number(i), "asdf", "asdffdsa" + QString::number(i));
+        contact *tempContact = new contact("person" + QString::number(i), "some address", "skype" + QString::number(i), "rc" + QString::number(i));
         this->_book.push_back(tempContact);
     }
 }
 
-void addressbook::addContact(QString name, QString address, QString skypeLogin){
-    contact *tempContact = new contact(name, address, skypeLogin);
+void addressbook::addContact(QString name, QString address, QString skypeLogin, QString rc){
+    contact *tempContact = new contact(name, address, skypeLogin, rc);
     this->_book.push_back(tempContact);
 }
 
@@ -26,7 +26,7 @@ int addressbook::deleteContact(QString name){
     return 1;//обьект не найден
 }
 
-int addressbook::editContact(QString name, QString address, QString skypeLogin){
+int addressbook::editContact(QString name, QString address, QString skypeLogin, QString rc){
     if(name.isEmpty()){
         return 2; //пустое имя
     }
@@ -34,9 +34,11 @@ int addressbook::editContact(QString name, QString address, QString skypeLogin){
         if(this->_book[i]->name() == name){
             this->_book[i]->setAddress(address);
             this->_book[i]->setSkypeLogin(skypeLogin);
+            this->_book[i]->setRaidCallNumber(rc);
             return 0;//успех
         }
     }
+    return 1;
 }
 
 contact addressbook::getContact(int i){

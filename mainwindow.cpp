@@ -82,8 +82,12 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::callSkype(){
-
     QString link = "skype:" + QObject::sender()->objectName() + "?call";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void MainWindow::callRC(){
+    QString link = "raidcall:" + QObject::sender()->objectName() + "?go";
     QDesktopServices::openUrl(QUrl(link));
 }
 

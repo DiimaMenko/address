@@ -28,6 +28,7 @@ public slots:
     void deleteContact();
     void editContact();
     void callSkype();
+    void callRC();
 
 private:
     Ui::MainWindow *ui;

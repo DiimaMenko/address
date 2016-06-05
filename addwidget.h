@@ -14,9 +14,11 @@ private:
     QLineEdit *nameLineEdit;
     QLineEdit *addressLineEdit;
     QLineEdit *skypeLoginLineEdit;
+    QLineEdit *raidCallLineEdit;
     QLabel *nameLabel;
     QLabel *addressLabel;
     QLabel *skypeLoginLabel;
+    QLabel *raidCallLabel;
 public:
     addWidget();
 

@@ -13,9 +13,9 @@ private:
 public:
     addressbook();
 
-    void addContact(QString name, QString address, QString skypeLogin);
+    void addContact(QString name, QString address, QString skypeLogin, QString rc);
     int deleteContact(QString name);
-    int editContact(QString name, QString address, QString skypeLogin);
+    int editContact(QString name, QString address, QString skypeLogin, QString rc);
     int saveBook();
     int loadBook();
     contact getContact(int i);
