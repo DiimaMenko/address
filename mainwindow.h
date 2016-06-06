@@ -10,6 +10,7 @@
 #include <QLineEdit>
 
 #include "addressbook.h"
+#include "addwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,11 +25,14 @@ public:
     ~MainWindow();
 
 public slots:
-    void addContact();
+    void addContact(int i);
+    void addContactPressed();
     void deleteContact();
     void editContact();
     void callSkype();
     void callRC();
+    void okAddPressed();
+    void clearAll(int i);
 
 private:
     Ui::MainWindow *ui;
@@ -36,13 +40,16 @@ private:
     addressbook *someBook;
     QVector<QLabel *> nameLabels;
     QVector<QPushButton *> skypeLoginButtons;
-    QVector<QLabel *> addressLineEdits;
-    QVector<QLabel *> skypeLoginLineEdits;
+    QVector<QLabel *> addressLabels;
     QVector<QPushButton *> deleteContactButtons;
+    QVector<QPushButton *> rcButtons;
     QPushButton *addContactButton;
     QLabel *nameLabel;
     QLabel *addressLabel;
     QLabel *skypeLoginLabel;
+    QLabel *rcLabel;
+    addWidget *widget;
+    QPushButton *okAddButton;
 };
 
 #endif // MAINWINDOW_H

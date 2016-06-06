@@ -13,6 +13,11 @@ void addressbook::addContact(QString name, QString address, QString skypeLogin, 
     this->_book.push_back(tempContact);
 }
 
+void addressbook::addContact(contact *some){
+    contact *tempContact = some;
+    this->_book.push_back(tempContact);
+}
+
 int addressbook::deleteContact(QString name){
     if(name.isEmpty()){
         return 2;//пустое имя

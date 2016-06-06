@@ -7,10 +7,16 @@
 #include <QLineEdit>
 #include <QLabel>
 
-class addWidget : QWidget
+class addWidget : public QWidget
 {
+    Q_OBJECT
+public:
+    explicit addWidget(QWidget *parent = 0);
+public slots:
+    void okPressed();
+    contact *getInfo();
+
 private:
-    QPushButton *okButton;
     QLineEdit *nameLineEdit;
     QLineEdit *addressLineEdit;
     QLineEdit *skypeLoginLineEdit;
@@ -19,14 +25,6 @@ private:
     QLabel *addressLabel;
     QLabel *skypeLoginLabel;
     QLabel *raidCallLabel;
-public:
-    addWidget();
-
-    contact getInfo();
-
-public slots:
-
-    void okPressed();
 };
 
 #endif // ADDWIDGET_H
