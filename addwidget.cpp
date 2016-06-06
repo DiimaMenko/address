@@ -42,3 +42,10 @@ contact *addWidget::getInfo(){
 void addWidget::okPressed(){
     this->hide();
 }
+
+void addWidget::clear(){
+    this->nameLineEdit->setText("");
+    this->addressLineEdit->setText("");
+    this->skypeLoginLineEdit->setText("");
+    this->raidCallLineEdit->setText("");
+}

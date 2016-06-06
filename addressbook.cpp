@@ -2,10 +2,7 @@
 
 addressbook::addressbook()
 {
-    for(int i = 0; i < 10; i++){
-        contact *tempContact = new contact("person" + QString::number(i), "some address", "skype" + QString::number(i), "rc" + QString::number(i));
-        this->_book.push_back(tempContact);
-    }
+
 }
 
 void addressbook::addContact(QString name, QString address, QString skypeLogin, QString rc){

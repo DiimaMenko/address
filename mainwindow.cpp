@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->resize(1040, 480);
+    this->resize(1240, 700);
 
     this->someBook = new addressbook();
 
@@ -84,6 +84,7 @@ void MainWindow::deleteContact(){
 void MainWindow::addContactPressed(){
     this->addContactButton->hide();
     this->okAddButton->show();
+    this->widget->clear();
     this->widget->show();
 }
 
@@ -92,11 +93,11 @@ void MainWindow::editContact(){
 }
 
 void MainWindow::clearAll(int i){
-    this->nameLabels[i]->hide();
-    this->skypeLoginButtons[i]->hide();
-    this->addressLabels[i]->hide();
-    this->deleteContactButtons[i]->hide();
-    this->rcButtons[i]->hide();
+    this->nameLabels[i]->hide();//names
+    this->skypeLoginButtons[i]->hide();//skype
+    this->addressLabels[i]->hide();//address
+    this->deleteContactButtons[i]->hide();//delete
+    this->rcButtons[i]->hide();//raid call
 }
 
 void MainWindow::okAddPressed(){

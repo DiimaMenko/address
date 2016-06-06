@@ -15,6 +15,7 @@ public:
 public slots:
     void okPressed();
     contact *getInfo();
+    void clear();
 
 private:
     QLineEdit *nameLineEdit;
